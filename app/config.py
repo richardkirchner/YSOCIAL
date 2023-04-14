@@ -4,6 +4,6 @@ load_dotenv()
 
 SQLALCHEMY_DATABASE_URI = environ.get('DATABASE_URL')
 
-EVENTS_MAX_PER_PAGE = 5
+EVENTS_MAX_PER_PAGE = 10
 
 SECRET_KEY = environ.get('SECRET_KEY')
