@@ -24,7 +24,7 @@ def post_new_acc():
     user.save()
 
     login_user(user)
-    return redirect(url_for('events.events'))
+    return redirect(url_for('events/.get_events'))
   except Exception as error_meassage:
     error= error_meassage or 'An error ocurred while creating a user. Please make sure to enter valid data'
     return render_template('new_acc.html',error=error)
