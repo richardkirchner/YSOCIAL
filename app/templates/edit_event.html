@@ -9,43 +9,35 @@
         <nav>
             <menu>
                 <menuitem><a href="{{ url_for('events/.index') }}"><button type="button">Home</button></a></menuitem>
-                {% if current_user.is_authenticated %}
-
-                <menuitem><a href="{{ url_for('user.logout') }}">
-                  <button type="button">Logout</button></a>
-                </menuitem>
-                <small> Logged in as {{ current_user.email }} </small>
-                {% else %}
                 <menuitem><a href="{{ url_for('events/.get_events') }}"><button type="button">Events</button></a></menuitem>
-                {% endif %}
             </menu>
         </nav>
     </header>
     <div class="main">
       <div class="register">
-          <h2>Register your event</h2>
-        <form method="POST" action="/register">
+          <h2>Edit your event</h2>
+        <form method="POST" action="/edit_event/{{event.id}}">
           <p>
             <div>
               <label for="event"></label>
-              <input type="text" name="event" id="event" required placeholder="your event name">
+              <input type="text" name="event" id="event" placeholder="your event name" value="{{event.name}}">
             </div>
           </p>
           <p>
             <div>
               <label for="event_date"></label>
-              <input type="integer" name="event_date" id="event_date" required placeholder="dd.mm.yyyy">
+              <input type="integer" name="event_date" id="event_date"  placeholder="dd.mm.yyyy" >
             </div>
           </p>
           <p>
             <div>
               <label for="event_discription"></label>
-              <input type="text" name="event_discription" id="event_discription" required placeholder="your event description">
+              <input type="text" name="event_discription" id="event_discription" placeholder="your event discription" value="{{event.desc}}">
             </div>
           </p>
           <p>
             <div>
-              <input type="submit" value="register">
+              <input type="submit" value="update">
             </div>
           </p>  
         </form>
