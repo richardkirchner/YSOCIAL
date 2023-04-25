@@ -43,32 +43,33 @@
         </p>
       {%endfor%}
     
-      <!-- <nav>
-        <p>
-          {% if events_pagination.prev_num %}
-          <a href="{{url_for('events.events', page=events_pagination.pref_num) }}"
-            >Previous Page</a
-          >
-          {%else%}
-          <small>
-            <span>Previous Page</span>
-            {% endif %}
-            <span> - </span>
-            {% if events_pagination.next_num %}
-            <a
-              href="{{ url_for('events.events', page=events_pagination.next_num) }}"
-              >Next Page</a
-            >
-            {% else%}
-            <span>Next Page</span>
-          </small>
-          {% endif %}
-        </p>
-      </nav> -->
+      
       <p>
         <a href="{{ url_for('events/.post_events') }}"><button type="button">Register your event</button></a>
      </p>
     </div>
+    <nav style="padding-left: 10rem;">
+      <p>
+        {% if events_pagination.prev_num %}
+        <a href="{{url_for('events/.get_events', page=events_pagination.pref_num) }}"
+          >Previous Page</a
+        >
+        {%else%}
+        <small>
+          <span>Previous Page</span>
+          {% endif %}
+          <span> - </span>
+          {% if events_pagination.next_num %}
+          <a
+            href="{{ url_for('events/.get_events', page=events_pagination.next_num) }}"
+            >Next Page</a
+          >
+          {% else%}
+          <span>Next Page</span>
+        </small>
+        {% endif %}
+      </p>
+    </nav> 
   </div>
   
 </body>
