@@ -9,7 +9,7 @@ blueprint = Blueprint('events/',__name__)
 @blueprint.route('/events')
 def get_events():
   page_number = request.args.get('page', 1, type=int)
-  events_pagination = event.query.paginate(page_number, current_app.config['EVENTS_MAX_PER_PAGE'])
+  events_pagination = event.query.paginate(page=page_number, per_page=current_app.config['EVENTS_MAX_PER_PAGE'])
   return render_template('events.html', events_pagination=events_pagination)
 
 @blueprint.route('/register', methods=('GET','POST'))
