@@ -201,6 +201,30 @@ display: inline-block;
     width: 800px;
 }
 
+.navigation-manual{
+    position: absolute;
+    display:flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.manual-btn{
+    border: 2px solid #ff6e48;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background: #ff6e48;
+}
+
 #radio1:checked ~ .first{
     margin-left: 0;
 }
